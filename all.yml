@@ -3,69 +3,325 @@
   roles:
 
   # osx config
+  - role: homedir
   - role: dock
-    apps:
-    - /Applications/Firefox.app
-    - /Applications/Airmail.app
-    - /Applications/Dashlane.app
-    - /Applications/Spotify.app
-    - /Applications/Airmail.app
-    - "/Applications/Adobe Photoshop CC/Adobe Photoshop CC.app"
-    - "/Applications/Adobe Illustrator CC/Adobe Illustrator.app"
-    - /Applications/Atom.app
-    - /Applications/iTerm.app
-    - /Applications/Dash.app
+    # apps:
+    # - /Applications/iTerm.app
     folders:
     - path: ~/
     - path: ~/Documents
+    - path: ~/src/github.com
     - path: ~/Downloads
       sort: datemodified
-  - role: cask_package
-    package_name: asepsis
   - role: dashboard
     disabled: YES
 
   # fonts
   - role: cask_package
     tap: caskroom/fonts
+    package_name: font-anonymous-pro
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-dejavu
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-dejavu-sans-mono-for-powerline
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-fontawesome
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-inconsolata-dz
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-inconsolata-dz-for-powerline
+  - role: cask_package
+    tap: caskroom/fonts
     package_name: font-source-code-pro
   - role: cask_package
     tap: caskroom/fonts
     package_name: font-sauce-code-powerline
+  - role: cask_package
+    tap: caskroom/fonts
+    package_name: font-symbola
 
-  # cli
-  # shell tooling
+  #
+  # CLI
+  #
+
+  # essentials
+  - role: brew_package
+    package_name: autoconf
+  - role: brew_package
+    package_name: binutils
+  - role: brew_package
+    package_name: coreutils
+  - role: brew_package
+    package_name: ctags
+  - role: brew_package
+    tap: homebrew/dupes
+    package_name: diffutils
+  - role: brew_package
+    package_name: dos2unix
+  - role: brew_package
+    package_name: findutils
+  - role: brew_package
+    package_name: gnu-tar
+  - role: brew_package
+    package_name: imagemagick
+  - role: brew_package
+    package_name: reattach-to-user-namespace
+  - role: brew_package
+    package_name: ssh-copy-id
+  - role: brew_package
+    package_name: the_silver_searcher
+  - role: brew_package
+    package_name: tmux
+  - role: brew_package
+    package_name: tree
+  - role: brew_package
+    package_name: vim
+
+  # git
   - role: git
-    git_user_name: Bob Bob
-    git_user_email: bob.bob@example.com
+    git_user_name: Stephen Tudor
+    git_user_email: smtudor@gmail.com
   - role: legit
   - role: hub
   - role: brew_package
-    package_name: vim
-  ## languages
+    package_name: git-extras
   - role: brew_package
-    package_name: node
+    package_name: git-flow
+  - role: brew_package
+    package_name: tig
+
+  # languages
   - role: rbenv
-  - role: npm_package
-    package_name: grunt
-  - role: npm_package
-    package_name: bower
   - role: cask_package
     package_name: java
   - role: brew_package
+    package_name: maven
+  - role: brew_package
+    package_name: leiningen
+  - role: brew_package
+    package_name: clojurescript
+  - role: brew_package
+    package_name: sbt
+  - role: brew_package
+    package_name: dart
+  - role: brew_package
+    package_name: ghc
+  - role: brew_package
+    package_name: go
+  - role: brew_package
+    package_name: lua
+  - role: brew_package
+    package_name: node
+  - role: brew_package
+    package_name: python
+  - role: brew_package
+    package_name: rust
+  - role: brew_package
     package_name: android-sdk
-  ## databases
+  - role: brew_package
+    package_name: android-ndk
+
+  # archive tools
+  - role: brew_package
+    package_name: unrar
+  - role: brew_package
+    tap: homebrew/dupes
+    package_name: gzip
+
+  # process tools
+  - role: brew_package
+    package_name: htop
+  - role: brew_package
+    package_name: watch
+
+  # network tools
+  - role: brew_package
+    package_name: curl
+  - role: brew_package
+    package_name: stunnel
+  - role: brew_package
+    package_name: wget
+
+  # security tools
+  - role: brew_package
+    package_name: gnupg
+  - role: brew_package
+    package_name: nmap
+  - role: brew_package
+    package_name: pwgen
+
+  # media tools
+  - role: brew_package
+    package_name: graphicsmagick
+  - role: brew_package
+    package_name: imagesnap
+  - role: brew_package
+    package_name: pianobar
+
+  # virtualization
+  - role: brew_package
+    package_name: boot2docker
+  - role: brew_package
+    package_name: docker
+
+  # databases
+  - role: brew_package
+    package_name: mongodb
   - role: brew_package
     package_name: postgres
   - role: brew_package
-    package_name: mongodb
-  ## deployment
+    package_name: redis
+  - role: brew_package
+    package_name: voltdb
+
+  # deployment
   - role: brew_package
     package_name: heroku-toolbelt
+  - role: brew_package
+    package_name: s3cmd
   # - role: brew_package
   #   package_name: ansible # Hey ! Already there !
 
-  # gui
-  ## text editors
+  # nodejs modules
+  - role: npm_package
+    package_name: bower
+  - role: npm_package
+    package_name: browserify
+  - role: npm_package
+    package_name: coffee-script
+  - role: npm_package
+    package_name: firebase-tools
+  - role: npm_package
+    package_name: grunt-cli
+  - role: npm_package
+    package_name: gulp
+  - role: npm_package
+    package_name: meteorite
+  - role: npm_package
+    package_name: node-debug
+  - role: npm_package
+    package_name: nodemon
+  - role: npm_package
+    package_name: react-tools
+  - role: npm_package
+    package_name: tern
+  - role: npm_package
+    package_name: yo
+
+  # ruby gems
+  - role: gem_package
+    package_name: bundler
+  - role: gem_package
+    package_name: compass
+  - role: gem_package
+    package_name: jekyll
+
+  #
+  # ~/Applications
+  #
+
+  # general
+  - role: cask_package
+    package_name: box-sync
+  - role: cask_package
+    package_name: charles
+  - role: cask_package
+    package_name: chromium
+  - role: cask_package
+    package_name: firefox
+  - role: cask_package
+    package_name: google-chrome
+  - role: cask_package
+    package_name: sequel-pro
+  - role: cask_package
+    package_name: skype
+  - role: cask_package
+    package_name: virtualbox
+
+  # text editors
   - role: cask_package
     package_name: atom
+  - role: cask_package
+    package_name: darteditor
+  - role: cask_package
+    package_name: nvalt
+  - role: cask_package
+    package_name: webstorm
+
+  # virtual machines
+  - role: cask_package
+    package_name: vagrant
+  - role: cask_package
+    package_name: vagrant-manager
+  - role: cask_package
+    package_name: vmware-fusion
+
+  # other dev tools
+  - role: cask_package
+    package_name: dash
+  - role: cask_package
+    package_name: sourcetree
+  - role: cask_package
+    package_name: tower
+
+  # design tools
+  - role: cask_package
+    package_name: adobe-creative-cloud
+  - role: cask_package
+    package_name: skitch
+
+  # communication
+  - role: cask_package
+    package_name: adium
+  - role: cask_package
+    package_name: google-hangouts
+  - role: cask_package
+    package_name: hipchat
+  - role: cask_package
+    package_name: slack
+
+  # non-dev stuff for general productivity
+  - role: alfred
+  - role: cask_package
+    package_name: arq
+  - role: cask_package
+    package_name: cloud
+  - role: cask_package
+    package_name: dashlane
+  - role: cask_package
+    package_name: dropbox
+  - role: cask_package
+    package_name: evernote
+  - role: cask_package
+    package_name: flux
+  - role: cask_package
+    package_name: google-drive
+  - role: cask_package
+    package_name: gpgtools
+  - role: cask_package
+    package_name: kindle
+  - role: cask_package
+    package_name: mindnode-pro
+  - role: cask_package
+    package_name: moom
+  - role: cask_package
+    package_name: onepassword
+  - role: cask_package
+    package_name: transmit
+
+  # non-dev stuff for general unproductivity
+  - role: cask_package
+    package_name: flash
+  - role: cask_package
+    package_name: rdio
+  - role: cask_package
+    package_name: steam
+  - role: cask_package
+    package_name: transmission
+  - role: cask_package
+    package_name: vlc
