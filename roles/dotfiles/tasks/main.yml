@@ -1,0 +1,10 @@
+---
+- name: cleanup
+  command: rm ~/.zshrc ~/.vimrc.bundles.fork ~/.vimrc.bundles.local ~/.vimrc.fork ~/.vimrc.local
+
+- name: get dotfiles submodules
+  command: cd ~/src/github.com/smt/dots && git submodule --recursive --init
+
+# port this to ansible, silly goose!
+- name: install dotfiles
+  command: bash ~/src/github.com/smt/dots/install.sh
